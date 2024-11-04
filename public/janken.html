@@ -9,6 +9,9 @@
         <input type="text" name="hand" required>
         <label for="hand">何を出す？</label>
         <input type="submit" values="じゃんけん　ポン">
+        <p>あなたの手は<%= your %>です．</p>
+        <p>コンピュータは<%= cpu %>です．</p>
+        <p>判定：<%= judgment %></p>
         <input type="hidden" name="win" value="0">
         <input type="hidden" name="total" value="0">
     </form>

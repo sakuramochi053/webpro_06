@@ -7,14 +7,14 @@
 <body>
     <p>あなたの手は<%= your %>です．</p>
     <p>コンピュータは<%= cpu %>です．</p>
-    <p>判定：<%= judgement %></p>
+    <p>判定：<%= judgment %></p>
     <p>現在<%= total %>試合中<%= win %>勝しています．</p>
     <hr>
     <form action="/janken">
         <input type="text" name="hand" required>
         <label for="hand">次は何を出す？</label>
-        <input type="hidden" name="win" value="<%= win %>">
-        <input type="hidden" name="total" value="<%= total %>">
+        <input type="hidden" name="win" value="<%= win || 0%>">
+        <input type="hidden" name="total" value="<%= total|| 0 %>">
         <input type="submit" values="じゃんけん　ポン">
     </form>   
 </body>
