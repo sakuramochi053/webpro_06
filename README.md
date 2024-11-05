@@ -20,10 +20,8 @@ console.log( 'Hello' );
 1. 自分の手を入力する
 
 
-```mermaid
-flowchart TD;
-開始 --> 終了;
-```
+
+
 ```mermaid
 flowchart TD;
 
