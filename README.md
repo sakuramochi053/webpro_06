@@ -10,9 +10,6 @@ app5.js | プログラム本体
 janken.html |じゃんけんを表示するプロログラム
 public/janken.html | じゃんけんの開始画面
 
-```C++
-console.log( 'Hello' );
-```
 
 ## 使用方法
 1. app5.js を起動する
@@ -21,6 +18,7 @@ console.log( 'Hello' );
 
 
 
+## フローチャート
 
 ```mermaid
 flowchart TD;
