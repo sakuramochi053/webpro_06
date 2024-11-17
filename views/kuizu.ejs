@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>クイズ</title>
+</head>
+<body>
+    <img src="<%= filename2 %>" alt="<%= alt %>">
+    <p><%=  seigo2%></p>
+    </p>デバックログ seigo1だったら正誤判定<p><%=  seigo%></p>numkuizu2写真を更新するか判断0だったら更新<p><%=  numkuizu2%></p>numkuizuhantei0だったらランダムな数値を生成<p><%=  numkuizuhantei%></p>
+    numkuizu0なら日本1ならアメリカ2ならイギリス<p><%=  numkuizu%></p>
+    <form action="/kuizu">
+        <input type="text" name="kaitou" required>
+        <input type="hidden" name="seigo" value="<%= seigo || 0%>">
+        <input type="hidden" name="numkuizu2" value="<%= numkuizu2 || 0%>">
+        <input type="hidden" name="mondai" value="<%= filename2|| 0%>">
+        <input type="hidden" name="numkuizuhantei" value="<%= numkuizuhantei|| 0%>">
+        <input type="hidden" name="numkuizu" value="<%= numkuizu|| 0%>">
+    </form>   
+</body>
+</html>
+
+
