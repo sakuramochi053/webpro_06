@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>為替</title>
+    <script>   
+    function Nowtime() {
+        let nowTime = new Date();
+        let nowHour = nowTime.getHours();
+        let nowMin  = nowTime.getMinutes();
+        let nowSec  = nowTime.getSeconds();
+        let msg = "日本時間" + nowHour + "時" + nowMin + "分" + nowSec+ "秒";
+        document.getElementById("clock").textContent = msg;}
+        window.onload = function() {
+        Nowtime(); // 最初の時刻表示
+   ;}
+    </script>
 </head>
 <body>
     <p>他の国のお金を日本円に変えてみよう！！</p>
-    <p>1<%=  siraberuokane%> <%= hennkannsaretaokane%>円です</p>
+    <p><span id="clock"></span> の為替は1<%=  siraberuokane%> <%= hennkannsaretaokane%>円です</p>
     <p>下の空欄に変換したいお金を書いてね</p>
     <hr>
     <form action="/kawase">

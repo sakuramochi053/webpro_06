@@ -83,26 +83,27 @@ app.post("/add", (req, res) => {
 });
 
 // これより下はBBS関係
+
 app.post("/check", (req, res) => {
   // 本来はここでDBMSに問い合わせる
-  res.json( {number: bbs.length });
+  res.json( {number: bbs.length });//番号
 });
 
 app.post("/read", (req, res) => {
   // 本来はここでDBMSに問い合わせる
-  const start = Number( req.body.start );
-  console.log( "read -> " + start );
+  const start = Number( req.body.start );//デバック
+  console.log( "read -> " + start );//startが０だったら全部送るようにしている
   if( start==0 ) res.json( {messages: bbs });
-  else res.json( {messages: bbs.slice( start )});
+  else res.json( {messages: bbs.slice( start )});//slice以降の配列を送る
 });
 
 app.post("/post", (req, res) => {
-  const name = req.body.name;
-  const message = req.body.message;
-  console.log( [name, message] );
+  const name = req.body.name;//名前
+  const message = req.body.message;//投稿者名
+  console.log( [name, message] );//内容表示
   // 本来はここでDBMSに保存する
-  bbs.push( { name: name, message: message } );
-  res.json( {number: bbs.length } );
+  bbs.push( { name: name, message: message } );//配列を追加
+  res.json( {number: bbs.length } );//一応全投稿件数がいくつになったか表示
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
