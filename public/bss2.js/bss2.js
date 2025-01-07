@@ -28,8 +28,9 @@ document.querySelector('#post').addEventListener('click', () => {  //投稿ボ�
     });
 });
 
-function  update  () {
- //もし新しい投稿があったら持ってくる
+
+
+document.querySelector('#check').addEventListener('click', () => { //もし新しい投稿があったら持ってくる
     const params = {  // URL Encode    ←おそらく通信の設定
         method: "POST",
         body:  '',
@@ -76,29 +77,14 @@ function  update  () {
                     name_area.className = 'name';//nameというタグを付ける
                     name_area.innerText = mes.name;//mes.message というサーバーから受け取ったメッセージの内容をspan要素に設定して、ウェブページ上に表示する
                     let mes_area = document.createElement('span');//メッセージを表示させるためのspanを作成する
-                    mes_area.className = 'mes';//mesというタグを付ける
+                    mes_area.className = 'mes';//mesという
                     mes_area.innerText = mes.message;
-                    let zikoku = document.createElement('span');
-                    zikoku.className = "zikoku";
-                    let nowTime = new Date();
-                    let nowHour = nowTime.getHours();
-                    let nowMin  = nowTime.getMinutes();
-                    let nowSec  = nowTime.getSeconds();
-                    zikoku.innerText = `${nowHour}時${nowMin}分${nowSec}秒 投稿`;
-                    let button = document.createElement('button'); 
-                    button.className= 'button';
-                    button.innerHTML = '<img src="./hato3.png" width="20" height="20" alt="Like" class="iine__icon">';
-                    button.addEventListener('click', function() {
-                        const icon = button.querySelector('img');  // クリックしたボタン内の画像要素を取得
-                        icon.classList.toggle('liked'); });
-                    cover.appendChild( name_area );//ここで名前などを枠の中に追加している 送信者名を含むname_areaをcoverの子要素として追加する．
+                    cover.appendChild( name_area );//送信者名を含むname_areaをcoverの子要素として追加する．
                     cover.appendChild( mes_area );
-                    cover.appendChild( zikoku );
-                    cover.appendChild(button);//枠内に追加
+
                     bbs.appendChild( cover );//完成した投稿枠（cover）を、HTML の掲示板部分（#bbs）に追加する
                 }
             })
         }
     });
-};
-
+});
