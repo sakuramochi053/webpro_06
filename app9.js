@@ -5,7 +5,7 @@ const fs = require("fs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let bbs = [];  // 本来はDBMSを使用するが，今回はこの変数にデータを蓄える
+let bbs = [];  // 本来はDBMSを使用するが，今回はこの変数にデータを蓄える!
 
 app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
